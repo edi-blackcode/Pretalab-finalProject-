@@ -1,0 +1,9 @@
+.picMeditation {
+    padding: 100px;
+    background-color: rgb(216, 180, 180);
+    Position:relative;  
+    width:100%;
+    display:center;
+}
+
+/*align-self:flex-end;*/
