@@ -6,7 +6,7 @@ const Lessons = () =>{
         <>
         <h1>Principais aprendizados: </h1>
               
-        <div>
+        <div className={styles.iconlessons}>
             {topics.map(topic => 
                 <div>
                     <h1 key={topic.id}>
@@ -15,7 +15,7 @@ const Lessons = () =>{
                     <p>
                         {topic.description}
                     </p>
-                    <div className={styles.iconlessons} >
+                    <div>
                     <img alt={topic.name} src={topic.image}/>
                     </div>
                 </div>

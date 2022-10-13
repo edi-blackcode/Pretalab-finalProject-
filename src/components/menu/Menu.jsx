@@ -1,23 +1,36 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { List } from 'phosphor-react'
+import styles from './menu.module.css'
 
-const Menu = () =>{
+function Menu(){
+  const [open, setOpen] = useState(false)
+
+  function handleMenu() {
+    open ? setOpen(false) : setOpen(true)
+  }
+
   return(
-    <ul className="menu">
-      <li>
-        <Link className="link" to="/">Home</Link>
+    <nav className={styles.backMenu}>
+      <List size={32} isOpen={open} onClick={handleMenu} className={styles.hamburguer} />
+    <ul className={open ? styles.hamburguerOpen : styles.menu}>
+      <li  className={open ? styles.itemOpen : styles.item}>
+        <Link  className={open ? styles.linkOpen : styles.link} to="/">Home</Link>
       </li>
-      <li>
-        <Link  className="link" to="/About">About</Link>
+      <li className={open ? styles.itemOpen : styles.item}>
+        <Link  className={open ? styles.linkOpen : styles.link} to="/About">About</Link>
       </li>
-      <li>
-        <Link  className="link" to="/Lessons">Lessons</Link>
+      <li className={open ? styles.itemOpen : styles.item}>
+        <Link  className={open ? styles.linkOpen : styles.link} to="/Lessons">Lessons</Link>
       </li>
-      <li>
-        <Link  className="link" to="/Projects">Projects</Link>
+      <li className={open ? styles.itemOpen : styles.item}>
+        <Link  className={open ? styles.linkOpen : styles.link} to="/Projects">Projects</Link>
       </li>
       </ul>
+      </nav>
   )
 
 }
 
 export default Menu
+

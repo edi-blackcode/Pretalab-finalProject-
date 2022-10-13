@@ -1,10 +1,9 @@
 .footerMsg {
-    padding: 10px;
+    padding: 0%;
     background-color: brown;
-    Position:relative;  
-    align-self:flex-end;
     color:#fff;
-    min-height:2;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
     text-align: center;
-    width:100%;
 }
